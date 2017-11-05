@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.toshibap55w.controlcatastrofes">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegistrarUsuarios" />
+        <activity android:name=".MenuPrincipal" />
+        <activity android:name=".SeccionNoticias" />
+        <activity android:name=".DetalleNoticia" />
+        <activity android:name=".ComentarNoticia" />
+        <activity android:name=".AlertarCatastrofe" />
+        <activity android:name=".ListaAlertas" />
+        <activity android:name=".ComentarioInformacion" />
+        <activity android:name=".VerEntidades" />
+        <activity android:name=".ListarEntidades" />
+        <activity android:name=".PuntosEncuentro"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.toshibap55w.controlcatastrofes.VerEntidades"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestion de entidades"
+        android:textAlignment="center"
+        android:id="@+id/textView2" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:layout_weight="0.13" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el nombre"
+        android:id="@+id/tfNombre" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese la direccion"
+        android:id="@+id/tfDireccion" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el telefono"
+        android:id="@+id/tfTelefono" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTRAR"
+        android:onClick="crear"
+        android:id="@+id/btnRegistrar" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EDITAR"
+        android:onClick="editar"
+        android:id="@+id/btnEditar" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ELIMINAR"
+        android:onClick="eliminar"
+        android:id="@+id/btnEliminar" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LISTAR"
+        android:onClick="listar"
+        android:id="@+id/btnListar" />
+
+</LinearLayout>
