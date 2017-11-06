@@ -35,7 +35,7 @@ public class MenuPrincipal extends AppCompatActivity {
     }
 
     public void abrirGestionEntidades(View v) {
-        Intent i = new Intent(this, VerEntidades.class);
+        Intent i = new Intent(this, ListarEntidades.class);
         startActivity(i);
         //  CustomerDTO global = (CustomerDTO) getApplication();
         //Toast.makeText(this, global.getName() + " APELLIDO ", Toast.LENGTH_LONG);

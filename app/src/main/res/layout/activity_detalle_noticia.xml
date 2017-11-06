@@ -51,7 +51,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/etNombreNoticia" />
+                android:id="@+id/etNombreNoticia"
+                android:enabled="false"/>
 
             <EditText
                 android:layout_marginTop="15dp"
@@ -61,12 +62,13 @@
                 android:ems="10"
                 android:id="@+id/etDescripcionNoticia"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="0.14" />
+                android:layout_weight="0.14"
+                android:enabled="false"/>
 
             <GridView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:id="@+id/gridView"
+                android:id="@+id/listaImagenes"
                 android:layout_gravity="center_horizontal" />
 
             <LinearLayout
@@ -90,7 +92,7 @@
             <VideoView
                 android:layout_width="match_parent"
                 android:layout_height="339dp"
-                android:id="@+id/videoView"
+                android:id="@+id/videoViewNoticia"
                 android:layout_gravity="center_horizontal" />
 
 

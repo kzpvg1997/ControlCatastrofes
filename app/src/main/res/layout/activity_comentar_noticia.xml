@@ -23,14 +23,15 @@
         android:layout_height="350dp"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/etComentario"
+        android:layout_gravity="center_horizontal"
+        android:hint="por favor escriba su comentario aqui."/>
 
     <Spinner
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/spinner2"
+        android:id="@+id/spValoracionNoticia"
         android:layout_gravity="center_horizontal" />
 
     <Button

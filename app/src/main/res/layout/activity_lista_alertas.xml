@@ -22,7 +22,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NREGISTRAR NUEVA ALERTA"
+        android:text="REGISTRAR NUEVA ALERTA"
         android:id="@+id/btnIrRegistroAlerta"
         android:layout_gravity="center_horizontal"
         android:onClick="irAlertaCatastrofe"/>
@@ -31,6 +31,6 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
+        android:id="@+id/listaAlertas"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

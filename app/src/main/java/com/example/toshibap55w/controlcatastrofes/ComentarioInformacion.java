@@ -9,7 +9,7 @@ import android.widget.Spinner;
 public class ComentarioInformacion extends AppCompatActivity {
 
 
-    private EditText tfComentario;
+    private EditText etComentario;
     private Spinner cbValoracion;
 
     @Override
@@ -17,7 +17,7 @@ public class ComentarioInformacion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comentario_informacion);
 
-        tfComentario = (EditText) findViewById(R.id.tfComentario);
+        etComentario = (EditText) findViewById(R.id.tfComentario);
         cbValoracion = (Spinner) findViewById(R.id.cbValoracion);
         listarValoracion();
     }

@@ -40,7 +40,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gestion entidades"
+        android:text="Ver ntidades"
         android:onClick="abrirGestionEntidades"
         android:id="@+id/button2" />
 

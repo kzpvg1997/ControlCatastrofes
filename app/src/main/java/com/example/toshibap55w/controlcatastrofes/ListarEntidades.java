@@ -2,6 +2,7 @@ package com.example.toshibap55w.controlcatastrofes;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
@@ -12,6 +13,8 @@ public class ListarEntidades extends AppCompatActivity {
 
     private Servicio servicio;
 
+    ListView lista;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +23,7 @@ public class ListarEntidades extends AppCompatActivity {
 
         // gestionEntidades.php
         servicio = new Servicio();
+
+        lista = (ListView) findViewById(R.id.listaEntidades);
     }
 }

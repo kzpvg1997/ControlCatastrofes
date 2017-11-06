@@ -17,55 +17,59 @@
         android:textAlignment="center"
         android:id="@+id/textView2" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20px"
-        android:layout_weight="0.13" />
+
 
     <EditText
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese el nombre"
-        android:id="@+id/tfNombre" />
+        android:id="@+id/etNombreEntidad" />
 
     <EditText
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:hint="Ingrese la direccion"
-        android:id="@+id/tfDireccion" />
+        android:id="@+id/etDireccionEntidad" />
 
     <EditText
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese el telefono"
-        android:id="@+id/tfTelefono" />
+        android:id="@+id/etTelefonoEntidad" />
 
     <Button
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="REGISTRAR"
         android:onClick="crear"
-        android:id="@+id/btnRegistrar" />
+        android:id="@+id/btnRegistrarEntidad" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+       android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="EDITAR"
         android:onClick="editar"
-        android:id="@+id/btnEditar" />
+        android:id="@+id/btnEditarEntidad" />
 
     <Button
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ELIMINAR"
         android:onClick="eliminar"
-        android:id="@+id/btnEliminar" />
+        android:id="@+id/btnEliminarEntidad" />
 
     <Button
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LISTAR"
         android:onClick="listar"
-        android:id="@+id/btnListar" />
+        android:id="@+id/btnListarEntidades" />
 
 </LinearLayout>

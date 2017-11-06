@@ -18,12 +18,10 @@
         android:id="@+id/textView4"
         android:layout_gravity="center_horizontal" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.08" />
+
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Comentario:"
@@ -31,31 +29,32 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingrese el comentario"
-        android:id="@+id/tfComentario" />
+        android:layout_height="250dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/etComentarioInformacion" />
 
     <TextView
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Valoracion:"
         android:id="@+id/textView6" />
 
     <Spinner
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/cbValoracion" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.18" />
+
 
     <Button
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="AGREGAR COMENTARIO"
         android:onClick="crear"
-        android:id="@+id/btnAgregar" />
+        android:id="@+id/btnComentarRecomendacion" />
 
 </LinearLayout>

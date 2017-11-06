@@ -7,20 +7,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.toshibap55w.controlcatastrofes.ListarEntidades"
+    tools:context="com.example.toshibap55w.controlcatastrofes.MenuAdministrador"
     android:orientation="vertical">
 
-    <ProgressBar
-        style="?android:attr/progressBarStyleLarge"
+
+    <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/progreso"
+        android:text="BIENVENIDO ADMINISTRADOR"
+        android:id="@+id/textView18"
         android:layout_gravity="center_horizontal" />
 
-    <ListView
+    <Button
+        android:layout_marginTop="180dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listaEntidades" />
+        android:text="Gestionar entidades"
+        android:onClick="abrirGestionEntidades"
+        android:id="@+id/button2" />
 
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestionar Puntos de encuentro"
+        android:onClick="abrirPuntosEncuentro"
+        android:id="@+id/button3" />
 
 </LinearLayout>

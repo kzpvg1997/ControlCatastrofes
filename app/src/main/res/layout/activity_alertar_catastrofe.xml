@@ -10,81 +10,117 @@
     tools:context="com.example.toshibap55w.controlcatastrofes.AlertarCatastrofe"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ALERTAR EMERGENCIA"
-        android:id="@+id/textView14"
-        android:layout_gravity="center_horizontal" />
-
-    <Spinner
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/spTipoCatastrofeEmergencia" />
-
-    <EditText
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_gravity="center_horizontal" />
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Grabar Video (Opcional)"
-            android:id="@+id/textView15" />
-        <TextView
-            android:layout_marginLeft="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tomar Foto (Opcional)"
-            android:id="@+id/textView16" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="GRABAR"
-            android:id="@+id/btnGrabarVideo" />
-        <Button
-            android:layout_marginLeft="100dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TOMAR"
-            android:id="@+id/btnTomarFoto" />
-    </LinearLayout>
-
-    <Button
-    android:layout_marginTop="10dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="REGISTRAR UBICACION"
-    android:id="@+id/btnRegistrarUbicacion"
-    android:layout_gravity="center_horizontal" />
-
-    <Button
-        android:layout_marginTop="10dp"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTRAR ALERTA"
-        android:id="@+id/btnRegistrarAlerta"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALERTAR EMERGENCIA"
+                android:id="@+id/textView14"
+                android:layout_gravity="center_horizontal" />
+
+            <Spinner
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/spTipoCatastrofeEmergencia" />
+
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:hint="por favor describa su emergencia aqui."
+                android:id="@+id/etDescripcionEmergencia"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grabar Video (Opcional)"
+                    android:id="@+id/textView15" />
+                <TextView
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tomar Foto (Opcional)"
+                    android:id="@+id/textView16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GRABAR"
+                    android:id="@+id/btnGrabarVideo" />
+                <Button
+                    android:layout_marginLeft="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOMAR"
+                    android:id="@+id/btnTomarFoto" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etLatitudEmergencia"
+                    android:hint="ingrese latitud"
+                    android:enabled="false"/>
+
+                <EditText
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etLongitudEmergencia"
+                    android:hint="ingrese longitud"
+                    android:enabled="false"/>
+            </LinearLayout>
+
+            <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRAR UBICACION"
+            android:id="@+id/btnRegistrarUbicacion"
+            android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REGISTRAR ALERTA"
+                android:id="@+id/btnRegistrarAlerta"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
