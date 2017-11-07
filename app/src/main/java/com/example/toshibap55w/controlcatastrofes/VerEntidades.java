@@ -18,9 +18,9 @@ public class VerEntidades extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_entidades);
 
-        tfNombre = (EditText) findViewById(R.id.tfNombre);
-        tfDireccion = (EditText) findViewById(R.id.tfDireccion);
-        tfTelefono = (EditText) findViewById(R.id.tfTelefono);
+        tfNombre = (EditText) findViewById(R.id.etNombreEntidad);
+        tfDireccion = (EditText) findViewById(R.id.etDireccionEntidad);
+        tfTelefono = (EditText) findViewById(R.id.etTelefonoEntidad);
     }
 
     public void crear(View v){

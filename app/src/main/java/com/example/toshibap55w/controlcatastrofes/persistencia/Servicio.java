@@ -51,7 +51,7 @@ private String accion;
 /**
  * Url a la que se le realiza la peticion
  */
-private String ruta = "http://hospital.peliston.com/controlador/";
+private String ruta = "http://http://universidad.peliston.com/android2/catastrofes/";
 
 /**
  * Referencia de la actividad que realizo la peticion

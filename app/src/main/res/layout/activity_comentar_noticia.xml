@@ -23,7 +23,7 @@
         android:layout_height="350dp"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/etComentario"
+        android:id="@+id/etComentarioNoticia"
         android:layout_gravity="center_horizontal"
         android:hint="por favor escriba su comentario aqui."/>
 
