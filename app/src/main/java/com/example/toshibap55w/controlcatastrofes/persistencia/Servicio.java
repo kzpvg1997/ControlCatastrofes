@@ -130,7 +130,7 @@ public class Servicio extends AsyncTask<Void, String, Boolean> {
             writer.close();
             out.close();
             // Se ejecuta la conexion
-            publishProgress("Se estan enviando los datos...");
+            //publishProgress("Se estan enviando los datos...");
             conn.connect();
             // Con un InputStream se obtienen los datos de la conexion
             InputStream stream = conn.getInputStream();
@@ -152,9 +152,6 @@ public class Servicio extends AsyncTask<Void, String, Boolean> {
         } catch (IOException e) {
             publishProgress("Error IO" + e.getMessage());
             e.printStackTrace();
-        } catch (NullPointerException e) {
-            publishProgress("Conecte su celular a una red de internet");
-            return false;
         } finally {
             // Desconecta la conexion actida
             if (conn != null) {
@@ -210,7 +207,6 @@ public class Servicio extends AsyncTask<Void, String, Boolean> {
                         listView.setAdapter(adapter);
                     } else {
                         // Se saca la variable del objeto
-                        Toast.makeText(activity, "Operacion exitosa," + jsonObject.getString("res"), Toast.LENGTH_SHORT).show();
                         rta =  jsonObject.getString("res");
                     }
                 }

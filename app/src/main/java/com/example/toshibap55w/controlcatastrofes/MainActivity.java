@@ -16,10 +16,8 @@ import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
 
 public class MainActivity extends AppCompatActivity {
 
-    ProgressBar pbRegistro;
-
+    ProgressBar pbProgeso;
     Servicio servicio;
-
     EditText username,password;
 
     @Override
@@ -28,9 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         username = (EditText) findViewById(R.id.etUsuarioLogin);
         password = (EditText) findViewById(R.id.etPasswordLogin);
-        pbRegistro = (ProgressBar) findViewById(R.id.pbRegistro);
-        pbRegistro.setVisibility(View.INVISIBLE);
-
+        pbProgeso = (ProgressBar) findViewById(R.id.pblogin);
+        pbProgeso.setVisibility(View.INVISIBLE);
     }
 
     /**
@@ -44,28 +41,22 @@ public class MainActivity extends AppCompatActivity {
             Usuario u = new Usuario();
             u.setPassword(pass);
             u.setUsername(nick);
-            String msj = "Por favor, ingrese los datos";
-            if (!(u.getUsername().isEmpty() || u.getPassword().isEmpty())) {
-
+            if (u.getUsername().isEmpty() || u.getPassword().isEmpty()) {
+                Toast.makeText(this, "Por favor, ingrese los datos", Toast.LENGTH_SHORT).show();
+            }else{
                 /**
-                 * Llamamos el servicio de entrar
+                 * Llamamos al servicio de entrar
                  */
-                servicio = new Servicio(u, "gestionUsuarios.php", "entrar", this, pbRegistro);
+                servicio = new Servicio(u, "gestionUsuarios.php", "entrar", this, pbProgeso);
                 servicio.execute();
                 if(servicio.getRta().equals("EXITO")){
                     Intent i = new Intent(this,MenuPrincipal.class);
                     startActivity(i);
                 }else{
-                    msj = servicio.getRta();
+                    Toast.makeText(this, servicio.getRta(), Toast.LENGTH_SHORT).show();
                 }
-            }else{
-                Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
             }
-        }catch (NullPointerException ex){
-            Toast.makeText(this, "Conecte su celular a una red de internet", Toast.LENGTH_SHORT).show();
-            servicio.cancel(true);
         }catch (Exception n){
-            Toast.makeText(this, "Lo sentimos, hubo un error en la aplicacion", Toast.LENGTH_SHORT).show();
             n.printStackTrace();
         }
     }

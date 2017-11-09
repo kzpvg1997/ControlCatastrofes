@@ -17,7 +17,7 @@ public class ComentarNoticia extends AppCompatActivity {
         setContentView(R.layout.activity_comentar_noticia);
 
         etComentario = (EditText) findViewById(R.id.etComentarioNoticia);
-        spValoracion = (Spinner) findViewById(R.id.cbValoracion);
+        spValoracion = (Spinner) findViewById(R.id.spValoracionNoticia);
         listarValoracion();
     }
 
