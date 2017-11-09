@@ -33,8 +33,8 @@ public class RegistrarUsuarios extends AppCompatActivity {
         familiar = (EditText) findViewById(R.id.etFamiliar);
         usuario = (EditText) findViewById(R.id.etUsernameRegistro);
         password = (EditText) findViewById(R.id.etPasswordRegistro);
-
         pbRegistro = (ProgressBar) findViewById(R.id.pbRegistro);
+        pbRegistro.setVisibility(View.INVISIBLE);
     }
 
     public void volverLogin(View v){
@@ -80,7 +80,6 @@ public class RegistrarUsuarios extends AppCompatActivity {
                 servicio = new Servicio(p, "gestionUsuarios.php", "crear", this, pbRegistro);
             /*Se inicia la petecion*/
                 servicio.execute();
-                msj = "exito";
                 documento.setText("");
                 nombre.setText("");
                 apellido.setText("");
@@ -88,9 +87,6 @@ public class RegistrarUsuarios extends AppCompatActivity {
                 familiar.setText("");
                 usuario.setText("");
                 password.setText("");
-            }
-            if (!msj.equals("exito")) {
-                Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
             }
         }catch(NumberFormatException e){
             Toast.makeText(this, "En la cedula solo campos numericos", Toast.LENGTH_SHORT).show();

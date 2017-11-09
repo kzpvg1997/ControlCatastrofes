@@ -19,6 +19,12 @@
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pbRegistro"
+        android:layout_gravity="center_horizontal" />
+
     <TextView
     android:layout_marginTop="80dp"
     android:layout_width="wrap_content"
@@ -58,7 +64,7 @@
         android:text="INGRESAR"
         android:id="@+id/btnIngresar"
         android:layout_gravity="center_horizontal"
-        android:onClick="irMenuPrincipal"/>
+        android:onClick="entrar"/>
 
     <Button
         android:layout_marginTop="90dp"
