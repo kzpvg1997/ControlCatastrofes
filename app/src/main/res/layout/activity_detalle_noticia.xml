@@ -9,15 +9,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.DetalleNoticia"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@drawable/fondo">
 
     <TextView
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DETALLE NOTCIA"
         android:id="@+id/textView11"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/Titulos"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,14 +38,16 @@
                 android:text="COMENTAR"
                 android:id="@+id/btnirComentarNoticia"
                 android:layout_gravity="right"
-                android:onClick="irComentarNoticia"/>
+                android:onClick="irComentarNoticia"
+                style="@style/Botones.Amarillo"/>
 
             <TextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre Noticia:"
-                android:id="@+id/textView12" />
+                android:id="@+id/textView12"
+                style="@style/Titulos"/>
 
 
 
@@ -52,7 +56,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/etNombreNoticia"
-                android:enabled="false"/>
+                android:enabled="false"
+                style="@style/cajasTextos"/>
 
             <EditText
                 android:layout_marginTop="15dp"
@@ -63,13 +68,15 @@
                 android:id="@+id/etDescripcionNoticia"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.14"
-                android:enabled="false"/>
+                android:enabled="false"
+                style="@style/parrafos"/>
 
             <GridView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:id="@+id/listaImagenes"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                style="@style/listas"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -77,19 +84,23 @@
                 android:layout_height="match_parent">
 
                 <Spinner
-                    android:layout_marginTop="6dp"
                     android:layout_width="250dp"
                     android:layout_height="40dp"
-                    android:id="@+id/spVideos" />
+                    android:id="@+id/spVideos"
+                    style="@style/comobox"/>
 
                 <Button
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:text="VER"
-                    android:id="@+id/btnVerVideo" />
+                    android:id="@+id/btnVerVideo"
+                    style="@style/Botones.Amarillo"/>
             </LinearLayout>
 
             <VideoView
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="339dp"
                 android:id="@+id/videoViewNoticia"

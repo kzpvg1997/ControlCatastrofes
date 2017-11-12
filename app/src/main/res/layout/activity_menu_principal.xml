@@ -8,7 +8,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.MenuPrincipal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MENU PRINCIPAL"
+        android:id="@+id/textView18"
+        android:layout_gravity="center_horizontal"
+        style="@style/Titulos"/>
 
     <Button
         android:layout_marginTop="70dp"
@@ -17,7 +27,8 @@
         android:text="ALERTAR EMERGENCIA"
         android:id="@+id/btnAlertarEmergencia"
         android:layout_gravity="center_horizontal"
-        android:onClick="irListaAlertas"/>
+        android:onClick="irListaAlertas"
+        style="@style/Botones.Rojo"/>
 
     <Button
         android:layout_marginTop="20dp"
@@ -26,7 +37,8 @@
         android:text="VER NOTICIAS"
         android:id="@+id/btnVerNoticias"
         android:layout_gravity="center_horizontal"
-        android:onClick="irSeccionNoticias"/>
+        android:onClick="irSeccionNoticias"
+        style="@style/Botones.Azul"/>
 
     <Button
         android:layout_marginTop="20dp"
@@ -34,7 +46,8 @@
         android:layout_height="wrap_content"
         android:text="Comentar Seccion informacion"
         android:onClick="abrirComentarInformacion"
-        android:id="@+id/button" />
+        android:id="@+id/button"
+        style="@style/Botones.Verde"/>
 
     <Button
         android:layout_marginTop="20dp"
@@ -42,7 +55,8 @@
         android:layout_height="wrap_content"
         android:text="Ver ntidades"
         android:onClick="abrirGestionEntidades"
-        android:id="@+id/button2" />
+        android:id="@+id/button2"
+        style="@style/Botones.Azul"/>
 
     <Button
         android:layout_marginTop="20dp"
@@ -50,5 +64,6 @@
         android:layout_height="wrap_content"
         android:text="Puntos de encuentro"
         android:onClick="abrirPuntosEncuentro"
-        android:id="@+id/button3" />
+        android:id="@+id/button3"
+        style="@style/Botones.Amarillo"/>
 </LinearLayout>

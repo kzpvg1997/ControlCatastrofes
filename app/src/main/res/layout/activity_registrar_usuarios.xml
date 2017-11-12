@@ -8,17 +8,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.RegistrarUsuarios"
-    android:orientation="vertical">
-
-
+    android:orientation="vertical"
+    android:background="@drawable/fondo">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTRO"
+        android:text="REGISTRO DE USUARIOS"
         android:id="@+id/textView4"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/Titulos"/>
 
         <ProgressBar
             style="?android:attr/progressBarStyleHorizontal"
@@ -42,98 +42,112 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Documento:"
-                                android:id="@+id/textView5" />
+                                android:id="@+id/textView5"
+                            style="@style/textos"/>
 
                         <EditText
                                 android:layout_marginTop="10dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/etDocumento"
-                                android:hint="Ingrese documento de indentidad" />
+                                android:hint="Ingrese documento de indentidad"
+                            style="@style/cajasTextos"/>
 
                         <TextView
                                 android:layout_marginTop="10dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Nombre:"
-                                android:id="@+id/textView6" />
+                                android:id="@+id/textView6"
+                            style="@style/textos"/>
 
                         <EditText
                                 android:layout_marginTop="10dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/etNombre"
-                                android:hint="Ingrese Nombre" />
+                                android:hint="Ingrese Nombre"
+                            style="@style/cajasTextos"/>
 
                         <TextView
                                 android:layout_marginTop="10dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Apellido:"
-                                android:id="@+id/textView7" />
+                                android:id="@+id/textView7"
+                            style="@style/textos"/>
 
                         <EditText
                                 android:layout_marginTop="10dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/etApellido"
-                                android:hint="Ingrese Apellido" />
+                                android:hint="Ingrese Apellido"
+                            style="@style/cajasTextos"/>
 
                         <TextView
                                 android:layout_marginTop="10dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Telefono:"
-                                android:id="@+id/textView8" />
+                                android:id="@+id/textView8"
+                            style="@style/textos"/>
 
                         <EditText
                                 android:layout_marginTop="10dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/etTelefono"
-                                android:hint="Ingrese Telefono" />
+                                android:hint="Ingrese Telefono"
+                            style="@style/cajasTextos"/>
 
                         <TextView
                                 android:layout_marginTop="10dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Familiar:(Opcional)"
-                                android:id="@+id/textView9" />
+                                android:id="@+id/textView9"
+                            style="@style/textos"/>
 
                         <EditText
                                 android:layout_marginTop="10dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/etFamiliar"
-                                android:hint="Documento de familiar registrado" />
+                                android:hint="Documento de familiar registrado"
+                            style="@style/cajasTextos"/>
 
                         <TextView
                             android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Username:"
-                            android:id="@+id/textView22" />
+                            android:id="@+id/textView22"
+                            style="@style/textos"/>
 
                         <EditText
                             android:layout_marginTop="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/etUsernameRegistro"
-                            android:hint="ingrese username" />
+                            android:hint="ingrese username"
+                            style="@style/cajasTextos"/>
 
                         <TextView
                             android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Password:"
-                            android:id="@+id/textView23" />
+                            android:id="@+id/textView23"
+                            style="@style/textos"/>
 
                         <EditText
                             android:layout_marginTop="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/etPasswordRegistro"
-                            android:hint="ingrese password" />
+                            android:hint="ingrese password"
+                            style="@style/cajasTextos"/>
 
 
 
@@ -144,7 +158,8 @@
                                 android:text="REGISTRARSE"
                                 android:id="@+id/btnRegistrarse"
                                 android:layout_gravity="center_horizontal"
-                            android:onClick="registrarPersona"/>
+                            android:onClick="registrarPersona"
+                            style="@style/Botones.Verde"/>
                 </LinearLayout>
         </ScrollView>
 

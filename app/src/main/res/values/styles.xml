@@ -4,8 +4,72 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">#0A6888</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="Titulos" >
+
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+
+    </style>
+
+    <style name="textos" >
+
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+
+    </style>
+
+
+    <style name="cajasTextos">
+
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:cacheColorHint">#FFFFFF</item>
+
+    </style>
+
+
+    <style name="Botones">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">19dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Botones.Azul">
+
+        <item name="android:background">#0DADDA</item>
+    </style>
+
+    <style name="Botones.Rojo">
+
+        <item name="android:background">#BE4040</item>
+    </style>
+
+    <style name="Botones.Verde">
+
+        <item name="android:background">#06C381</item>
+    </style>
+
+    <style name="Botones.Amarillo">
+
+        <item name="android:background">#D8B253</item>
+    </style>
+
+    <style name="comobox">
+
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="parrafos">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="listas">
+        <item name="android:background">#FFFFFF</item>
+    </style>
 </resources>

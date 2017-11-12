@@ -8,19 +8,31 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.SeccionNoticias"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo">
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LISTA DE NOTICIAS"
         android:id="@+id/textView10"
         android:layout_gravity="center_horizontal"
-        android:onClick="irDetalleNoticia"/>
+        android:onClick="irDetalleNoticia"
+        style="@style/Titulos"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/progreso"
+        android:layout_gravity="center_horizontal" />
 
     <ListView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listaNoticias"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/listas"/>
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.toshibap55w.controlcatastrofes;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,9 +28,7 @@ public class VerEntidades extends AppCompatActivity {
 
     }
 
-    public void editar(View v){
 
-    }
 
     public void eliminar(View v){
 

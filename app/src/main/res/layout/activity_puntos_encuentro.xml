@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.PuntosEncuentro"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo">
 
 
     <TextView
@@ -17,91 +18,128 @@
         android:layout_height="wrap_content"
         android:text="Puntos de encuentro"
         android:textAlignment="center"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView3"
+        style="@style/Titulos"/>
 
 
-    <EditText
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/etDescripcionPunto"
-        android:layout_gravity="center_horizontal"
-        android:hint="ingrese la descripcion."/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Seleccione el tipo de punto"
-        android:id="@+id/textView" />
-
-    <Spinner
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/cbTipoPunto" />
-
-
-
-    <EditText
-        android:layout_marginTop="10dp"
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingrese la capacidad"
-        android:id="@+id/etCapacidadPunto" />
+        android:id="@+id/progressBarPuntos"
+        android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Abrir el mapa:"
-        android:id="@+id/textView19" />
-
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_marginTop="10dp"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:hint="Latitud"
-            android:id="@+id/etLatitudPunto"
-            android:enabled="false"/>
-
-        <EditText
-            android:layout_marginTop="10dp"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:hint="Longitud"
-            android:id="@+id/etLongitudPunto"
-            android:enabled="false"/>
-        <Button
-           android:layout_marginTop="10dp"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:text="ABRIR"
-            android:id="@+id/btnAbrirMapa"
-            android:onClick="abrirMapa"/>
-    </LinearLayout>
-
-    <Button
-        android:layout_marginTop="10dp"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTRAR"
-        android:onClick="crear"
-        android:id="@+id/btnRegistrarPunto" />
+        android:id="@+id/scrollView4"
+        android:layout_gravity="right" >
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="EDITAR"
-        android:onClick="editar"
-        android:id="@+id/btnEditarPunto" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <EditText
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/etDescripcionPunto"
+                android:layout_gravity="center_horizontal"
+                android:hint="ingrese la descripcion."
+                style="@style/parrafos"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccione el tipo de punto"
+                android:id="@+id/textView"
+                style="@style/textos"/>
+
+            <Spinner
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/spTipoPunto"
+                style="@style/comobox"/>
+
+
+
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese la capacidad"
+                android:id="@+id/etCapacidadPunto" />
+
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="((( Abrir el mapa )))"
+                android:id="@+id/textView19"
+                style="@style/textos"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_marginTop="10dp"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Latitud"
+                    android:id="@+id/etLatitudPunto"
+                    android:enabled="false"
+                    style="@style/cajasTextos"/>
+
+                <EditText
+                    android:layout_marginTop="10dp"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Longitud"
+                    android:id="@+id/etLongitudPunto"
+                    android:enabled="false"
+                    style="@style/cajasTextos"/>
+                <Button
+                    android:layout_marginTop="10dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="ABRIR"
+                    android:id="@+id/btnAbrirMapa"
+                    android:onClick="abrirMapa"
+                    style="@style/Botones.Verde"/>
+            </LinearLayout>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REGISTRAR"
+                android:onClick="crear"
+                android:id="@+id/btnRegistrarPunto"
+                style="@style/Botones.Azul"/>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VOLVER"
+                android:onClick="irMenu"
+                android:id="@+id/btnVolver"
+                style="@style/Botones.Rojo"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </LinearLayout>

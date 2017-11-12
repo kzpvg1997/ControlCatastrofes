@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.MenuAdministrador"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo">
 
 
     <TextView
@@ -17,22 +18,25 @@
         android:layout_height="wrap_content"
         android:text="BIENVENIDO ADMINISTRADOR"
         android:id="@+id/textView18"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/Titulos"/>
 
     <Button
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="150dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Gestionar entidades"
         android:onClick="abrirGestionEntidades"
-        android:id="@+id/button2" />
+        android:id="@+id/btnGestionEntidades"
+        style="@style/Botones.Amarillo"/>
 
     <Button
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Gestionar Puntos de encuentro"
-        android:onClick="abrirPuntosEncuentro"
-        android:id="@+id/button3" />
+        android:onClick="abrirGestionPuntosEncuentro"
+        android:id="@+id/btnGestionPuntos"
+        style="@style/Botones.Azul"/>
 
 </LinearLayout>

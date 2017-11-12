@@ -3,12 +3,14 @@ package com.example.toshibap55w.controlcatastrofes.persistencia;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.toshibap55w.controlcatastrofes.HiloInterfaz;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -35,7 +37,10 @@ public class Servicio extends AsyncTask<Void, String, Boolean> {
     /**
      * respuesta del servicio
      */
-    public static String rta;
+
+    public JSONObject rta;
+
+    public HiloInterfaz delegate=null;
 
     /**
      * Variable que almacena el resultado del servidor
@@ -75,8 +80,6 @@ public class Servicio extends AsyncTask<Void, String, Boolean> {
      */
     public Servicio() {
     }
-
-    private ListView listView;
 
     /**
      * Constructor
@@ -196,19 +199,19 @@ public class Servicio extends AsyncTask<Void, String, Boolean> {
             if (resultado) {
                 // como el resultado obtenido es un array json, se pasa al String JSOnArray
                 JSONArray jsonArray = new JSONArray(buffer.toString());
-                // por cada elemento del json
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    // Se saca el objeto del array y se pasa a un objeto json
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    if (accion.equals("listar")) {
-                        List<Object> listado = jsonToList(jsonObject.getString("res"));
-                        //List<T> lista = (clase) listado;
-                        ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(activity, android.R.layout.simple_list_item_1, listado);
-                        listView.setAdapter(adapter);
-                    } else {
+                Log.e("que hay?","long ==="+jsonArray.length());
+                if(jsonArray.length()==1) {
+                    // por cada elemento del json
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        // Se saca el objeto del array y se pasa a un objeto json
+                       // JSONObject jsonObject = jsonArray.getJSONObject(i);
                         // Se saca la variable del objeto
-                        rta =  jsonObject.getString("res");
+                        //rta = jsonObject.getString("res");
+                        rta = jsonArray.getJSONObject(i);
+                        delegate.publicFinish(rta);
                     }
+                }else if(jsonArray.length()>1){
+                    delegate.publicFinishListas(jsonArray);
                 }
             } else {
                 Toast.makeText(activity, "Error en la operacion", Toast.LENGTH_SHORT).show();
@@ -258,19 +261,4 @@ public class Servicio extends AsyncTask<Void, String, Boolean> {
         this.carga = carga;
     }
 
-    public ListView getListView() {
-        return listView;
-    }
-
-    public void setListView(ListView listView) {
-        this.listView = listView;
-    }
-
-    public static String getRta() {
-        return rta;
-    }
-
-    public static void setRta(String rta) {
-        Servicio.rta = rta;
-    }
 }

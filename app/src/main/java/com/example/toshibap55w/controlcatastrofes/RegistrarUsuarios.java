@@ -13,7 +13,10 @@ import com.example.toshibap55w.controlcatastrofes.modelo.Persona;
 import com.example.toshibap55w.controlcatastrofes.modelo.Usuario;
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
 
-public class RegistrarUsuarios extends AppCompatActivity {
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class RegistrarUsuarios extends AppCompatActivity implements HiloInterfaz{
 
     EditText documento,nombre,apellido,telefono,familiar,usuario,password;
     ProgressBar pbProgeso;
@@ -61,19 +64,49 @@ public class RegistrarUsuarios extends AppCompatActivity {
             p.setApellido(ape);
             p.setTelefono(tel);
             p.setUsuario(u);
-            Log.e("eeeh(((((((((((((((( ",""+p);
+            Log.e("eeeh(((((((((((((((( ", "" + p);
             if (documento.getText().equals(null) || nomb.isEmpty() || ape.isEmpty() || tel.isEmpty() || u.getUsername().isEmpty() || u.getPassword().isEmpty()) {
                 Toast.makeText(this, "Por favor, ingrese los datos", Toast.LENGTH_SHORT).show();
-            }else{
+            } else {
                 /**
                  * Llamamos el servicio de consignar
                  */
                 servicio = new Servicio(p, "gestionUsuarios.php", "crear", this, pbProgeso);
                 /*Se inicia la petecion*/
+                servicio.delegate = this;
                 servicio.execute();
-                String msj = servicio.getRta();
-                if(msj.equals("EXITO")){
-                    msj = "Se ha registrado correctamente";
+//                String msj = servicio.getRta();
+//                if(msj.equals("EXITO")){
+//                    msj = "Se ha registrado correctamente";
+//                    // limpiamos campos
+//                    documento.setText("");
+//                    nombre.setText("");
+//                    apellido.setText("");
+//                    telefono.setText("");
+//                    familiar.setText("");
+//                    usuario.setText("");
+//                    password.setText("");
+//                    Intent i = new Intent(this,MainActivity.class);
+//                    startActivity(i);
+//                }
+//                Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
+//            }
+            }
+        }catch(NumberFormatException e){
+            Toast.makeText(this, "En la cedula solo campos numericos", Toast.LENGTH_SHORT).show();
+        }catch (NullPointerException ex){
+           ex.printStackTrace();
+        }
+
+        }
+
+    @Override
+    public void publicFinish(JSONObject json) {
+    try {
+
+        if (json.getString("res").equalsIgnoreCase("EXITO")) {
+
+                  String  msj = "Se ha registrado correctamente";
                     // limpiamos campos
                     documento.setText("");
                     nombre.setText("");
@@ -84,13 +117,21 @@ public class RegistrarUsuarios extends AppCompatActivity {
                     password.setText("");
                     Intent i = new Intent(this,MainActivity.class);
                     startActivity(i);
-                }
+
                 Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
-            }
-        }catch(NumberFormatException e){
-            Toast.makeText(this, "En la cedula solo campos numericos", Toast.LENGTH_SHORT).show();
-        }catch (NullPointerException ex){
-            ex.printStackTrace();
+
+        } else{
+                Toast.makeText(this, json.getString("res"), Toast.LENGTH_SHORT).show();
         }
+
+    }catch (Exception e){
+
+    }
+    }
+
+    @Override
+    public void publicFinishListas(JSONArray jsonArray) {
+
     }
 }
+

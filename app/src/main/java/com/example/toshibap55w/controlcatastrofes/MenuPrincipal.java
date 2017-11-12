@@ -42,7 +42,7 @@ public class MenuPrincipal extends AppCompatActivity {
     }
 
     public void abrirPuntosEncuentro(View v) {
-        Intent i = new Intent(this, PuntosEncuentro.class);
+        Intent i = new Intent(this, ListaPuntosEncuentro.class);
         startActivity(i);
         //  CustomerDTO global = (CustomerDTO) getApplication();
         //Toast.makeText(this, global.getName() + " APELLIDO ", Toast.LENGTH_LONG);

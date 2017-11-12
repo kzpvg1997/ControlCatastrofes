@@ -8,14 +8,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.VerEntidades"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo">
 
     <TextView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Gestion de entidades"
         android:textAlignment="center"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"
+        style="@style/Titulos"/>
 
 
 
@@ -24,29 +27,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese el nombre"
-        android:id="@+id/etNombreEntidad" />
+        android:id="@+id/etNombreEntidad"
+        style="@style/cajasTextos"/>
 
     <EditText
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:hint="Ingrese la direccion"
-        android:id="@+id/etDireccionEntidad" />
+        android:id="@+id/etDireccionEntidad"
+        style="@style/cajasTextos"/>
 
     <EditText
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese el telefono"
-        android:id="@+id/etTelefonoEntidad" />
+        android:id="@+id/etTelefonoEntidad"
+        style="@style/cajasTextos"/>
 
     <Button
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="REGISTRAR"
         android:onClick="crear"
-        android:id="@+id/btnRegistrarEntidad" />
+        android:id="@+id/btnRegistrarEntidad"
+        style="@style/Botones.Verde"/>
 
     <Button
         android:layout_marginTop="10dp"
@@ -54,7 +61,8 @@
         android:layout_height="wrap_content"
         android:text="EDITAR"
         android:onClick="editar"
-        android:id="@+id/btnEditarEntidad" />
+        android:id="@+id/btnEditarEntidad"
+        style="@style/Botones.Azul"/>
 
     <Button
         android:layout_marginTop="10dp"
@@ -62,7 +70,8 @@
         android:layout_height="wrap_content"
         android:text="ELIMINAR"
         android:onClick="eliminar"
-        android:id="@+id/btnEliminarEntidad" />
+        android:id="@+id/btnEliminarEntidad"
+        style="@style/Botones.Rojo"/>
 
     <Button
         android:layout_marginTop="10dp"
@@ -70,6 +79,7 @@
         android:layout_height="wrap_content"
         android:text="LISTAR"
         android:onClick="listar"
-        android:id="@+id/btnListarEntidades" />
+        android:id="@+id/btnListarEntidades"
+        style="@style/Botones.Amarillo"/>
 
 </LinearLayout>

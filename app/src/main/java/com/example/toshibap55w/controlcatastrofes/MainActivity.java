@@ -14,7 +14,10 @@ import com.example.toshibap55w.controlcatastrofes.modelo.Persona;
 import com.example.toshibap55w.controlcatastrofes.modelo.Usuario;
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
 
-public class MainActivity extends AppCompatActivity {
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class MainActivity extends AppCompatActivity implements HiloInterfaz{
 
     ProgressBar pbProgeso;
     Servicio servicio;
@@ -48,13 +51,9 @@ public class MainActivity extends AppCompatActivity {
                  * Llamamos al servicio de entrar
                  */
                 servicio = new Servicio(u, "gestionUsuarios.php", "entrar", this, pbProgeso);
+                servicio.delegate=this;
                 servicio.execute();
-                if(servicio.getRta().equals("EXITO")){
-                    Intent i = new Intent(this,MenuPrincipal.class);
-                    startActivity(i);
-                }else{
-                    Toast.makeText(this, servicio.getRta(), Toast.LENGTH_SHORT).show();
-                }
+
             }
         }catch (Exception n){
             n.printStackTrace();
@@ -71,5 +70,37 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(this,MenuPrincipal.class);
         startActivity(i);
+    }
+
+    @Override
+    public void publicFinish(JSONObject json) {
+
+        try {
+            String nick = username.getText().toString();
+            String pass = password.getText().toString();
+            Usuario u = new Usuario();
+            u.setPassword(pass);
+            u.setUsername(nick);
+
+            if (json.getString("res").equalsIgnoreCase("EXITO")) {
+                if (u.getUsername().equals("admin")) {
+                    Intent i = new Intent(this, MenuAdministrador.class);
+                    startActivity(i);
+                }else {
+                    Intent i = new Intent(this, MenuPrincipal.class);
+                    startActivity(i);
+                }
+
+        }else{
+            Toast.makeText(this, json.getString("res"), Toast.LENGTH_SHORT).show();
+        }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void publicFinishListas(JSONArray jsonArray) {
+
     }
 }

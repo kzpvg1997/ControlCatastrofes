@@ -9,7 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo"
+    >
 
     <TextView
         android:layout_marginTop="10dp"
@@ -17,12 +19,13 @@
         android:layout_height="wrap_content"
         android:text="CONTROL DE CATASTROFES"
         android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/Titulos"/>
 
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pblogin"
         android:layout_gravity="center_horizontal" />
@@ -33,7 +36,8 @@
     android:layout_height="wrap_content"
     android:text="Nombre de usuario:"
     android:id="@+id/textView2"
-    android:layout_gravity="center_horizontal" />
+    android:layout_gravity="center_horizontal"
+        style="@style/textos"/>
 
     <EditText
         android:layout_marginTop="20dp"
@@ -41,7 +45,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/etUsuarioLogin"
         android:layout_gravity="center_horizontal"
-        android:hint="Ingrese nombre de usuario" />
+        android:hint="Ingrese nombre de usuario"
+        style="@style/cajasTextos"/>
 
     <TextView
         android:layout_marginTop="50dp"
@@ -49,7 +54,8 @@
         android:layout_height="wrap_content"
         android:text="Contraseña:"
         android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/textos"/>
 
     <EditText
         android:layout_marginTop="20dp"
@@ -59,7 +65,8 @@
         android:ems="20"
         android:id="@+id/etPasswordLogin"
         android:layout_gravity="center_horizontal"
-        android:hint="Ingrese contraseña de usuario" />
+        android:hint="Ingrese contraseña de usuario"
+        style="@style/cajasTextos"/>
 
     <Button
         android:layout_marginTop="30dp"
@@ -68,16 +75,18 @@
         android:text="INGRESAR"
         android:id="@+id/btnIngresar"
         android:layout_gravity="center_horizontal"
-        android:onClick="entrar"/>
+        android:onClick="entrar"
+        style="@style/Botones.Azul"/>
 
 
     <Button
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="80dp"
         android:layout_marginLeft="115dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTRASE"
         android:id="@+id/btnRegistrarse"
         android:layout_gravity="center_horizontal"
-        android:onClick="abrirRegistro"/>
+        android:onClick="abrirRegistro"
+        style="@style/Botones.Amarillo"/>
 </LinearLayout>

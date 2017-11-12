@@ -17,7 +17,28 @@
 
 
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true">
 
+
+        <TextView
+            android:layout_marginTop="495dp"
+            android:layout_marginLeft="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:background="#BAC4C5"
+            android:fontFamily="@string/cast_ad_label"
+            android:textSize="20dp"
+            android:text="SELECCIONE LUGAR EN EL MAPA"
+            android:id="@+id/textView20" />
+    </LinearLayout>
 
 
 </RelativeLayout>

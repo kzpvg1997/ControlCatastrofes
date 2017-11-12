@@ -8,15 +8,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.toshibap55w.controlcatastrofes.ComentarNoticia"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo">
 
     <TextView
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="COMENTAR NOTICIA"
         android:id="@+id/textView13"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/Titulos"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -25,14 +27,16 @@
         android:ems="10"
         android:id="@+id/etComentarioNoticia"
         android:layout_gravity="center_horizontal"
-        android:hint="por favor escriba su comentario aqui."/>
+        android:hint="por favor escriba su comentario aqui."
+        style="@style/parrafos"/>
 
     <Spinner
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/spValoracionNoticia"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/comobox"/>
 
     <Button
         android:layout_marginTop="20dp"
@@ -40,5 +44,6 @@
         android:layout_height="wrap_content"
         android:text="REGISTRAR COMENTARIO"
         android:id="@+id/btnRegistrarComentario"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        style="@style/Botones.Verde"/>
 </LinearLayout>
