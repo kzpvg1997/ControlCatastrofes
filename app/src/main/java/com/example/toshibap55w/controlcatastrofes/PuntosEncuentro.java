@@ -34,6 +34,7 @@ public class PuntosEncuentro extends AppCompatActivity implements hiloInterfaz {
     private ProgressBar progreso;
     private Servicio servicio;
     Spinner tipoPunto;
+private String accion = "";
 
 
     private ArrayAdapter adapter;
@@ -62,8 +63,8 @@ public class PuntosEncuentro extends AppCompatActivity implements hiloInterfaz {
             latitud.setText(lati);
             longitud.setText(longi);
         }
-
-        servicio = new Servicio(new Object(),"gestionListados.php","listarTipoPunto",this,progreso);
+accion = "listarTipoPunto";
+        servicio = new Servicio(new Object(),"gestionListados.php",accion,this,progreso);
         servicio.delegate=this;
         servicio.execute();
 
@@ -95,15 +96,16 @@ public class PuntosEncuentro extends AppCompatActivity implements hiloInterfaz {
     public void publicFinish(JSONObject json) {
         try{
 
-            List<TipoPunto> lista=jsonToList(json.getString("res"));
-            if(lista.size()<=0){
-                Toast.makeText(this,"Por favor ingrese datos",Toast.LENGTH_SHORT).show();
-                return;
-            }
-            adapter =new ArrayAdapter<TipoPunto>(this,android.R.layout.simple_spinner_item,lista);
-             tipoPunto.setAdapter(adapter);
+            if(accion.equalsIgnoreCase("listarTipoPunto")) {
 
-            if (json.getString("res").equalsIgnoreCase("EXITO")) {
+                List<TipoPunto> lista = jsonToList(json.getString("res"));
+                if (lista.size() <= 0) {
+                    Toast.makeText(this, "Por favor ingrese datos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                adapter = new ArrayAdapter<TipoPunto>(this, android.R.layout.simple_spinner_item, lista);
+                tipoPunto.setAdapter(adapter);
+            }else if (accion.equalsIgnoreCase("crear")){
 
                 String  msj = "Se ha registrado correctamente";
                 // limpiamos campos
@@ -157,29 +159,15 @@ public class PuntosEncuentro extends AppCompatActivity implements hiloInterfaz {
             if (desc.equals(null) || lat.isEmpty() || lon.isEmpty() || capac ==0 || tipoPun.isEmpty()) {
                 Toast.makeText(this, "Por favor, ingrese los datos", Toast.LENGTH_SHORT).show();
             } else {
+                accion = "crear";
                 /**
                  * Llamamos el servicio de consignar
                  */
-                servicio = new Servicio(pu, "gestionEncuentros.php", "crear", this, progreso);
+                servicio = new Servicio(pu, "gestionEncuentros.php", accion, this, progreso);
                 /*Se inicia la petecion*/
                 servicio.delegate = this;
                 servicio.execute();
-//                String msj = servicio.getRta();
-//                if(msj.equals("EXITO")){
-//                    msj = "Se ha registrado correctamente";
-//                    // limpiamos campos
-//                    documento.setText("");
-//                    nombre.setText("");
-//                    apellido.setText("");
-//                    telefono.setText("");
-//                    familiar.setText("");
-//                    usuario.setText("");
-//                    password.setText("");
-//                    Intent i = new Intent(this,MainActivity.class);
-//                    startActivity(i);
-//                }
-//                Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
-//            }
+
             }
         }catch(NumberFormatException e){
             Toast.makeText(this, "En la cedula solo campos numericos", Toast.LENGTH_SHORT).show();

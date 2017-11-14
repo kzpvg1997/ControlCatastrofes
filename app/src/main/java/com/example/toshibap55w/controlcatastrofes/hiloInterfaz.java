@@ -11,4 +11,5 @@ public interface hiloInterfaz {
     void publicFinish(JSONObject json);
     void publicFinishListas(JSONArray jsonArray);
 
+
 }

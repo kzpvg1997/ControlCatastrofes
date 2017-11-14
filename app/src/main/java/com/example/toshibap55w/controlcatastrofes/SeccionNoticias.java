@@ -85,7 +85,7 @@ public class SeccionNoticias extends AppCompatActivity implements hiloInterfaz {
     public void publicFinish(JSONObject json) {
         try{
 
-            lista=jsonToList(json.getString("res"));
+            List<Noticia> lista=jsonToList(json.getString("res"));
             if(lista.size()<=0){
                 Toast.makeText(this,"Por favor ingrese datos",Toast.LENGTH_SHORT).show();
                 return;
