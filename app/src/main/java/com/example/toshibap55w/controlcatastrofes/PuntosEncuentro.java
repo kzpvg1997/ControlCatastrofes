@@ -3,6 +3,7 @@ package com.example.toshibap55w.controlcatastrofes;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -10,7 +11,10 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.toshibap55w.controlcatastrofes.modelo.Persona;
+import com.example.toshibap55w.controlcatastrofes.modelo.PuntoEncuentro;
 import com.example.toshibap55w.controlcatastrofes.modelo.TipoPunto;
+import com.example.toshibap55w.controlcatastrofes.modelo.Usuario;
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
 import com.google.gson.Gson;
 
@@ -29,7 +33,8 @@ public class PuntosEncuentro extends AppCompatActivity implements hiloInterfaz {
 
     private ProgressBar progreso;
     private Servicio servicio;
-    Spinner spinner;
+    Spinner tipoPunto;
+
 
     private ArrayAdapter adapter;
 
@@ -42,7 +47,7 @@ public class PuntosEncuentro extends AppCompatActivity implements hiloInterfaz {
         latitud = (EditText) findViewById(R.id.etLatitudPunto);
         longitud = (EditText) findViewById(R.id.etLongitudPunto);
         capacidad = (EditText) findViewById(R.id.etCapacidadPunto);
-        spinner = (Spinner) findViewById(R.id.spTipoPunto);
+         tipoPunto = (Spinner) findViewById(R.id.spTipoPunto);
 
 
         progreso = (ProgressBar) findViewById(R.id.progressBarPuntos);
@@ -96,7 +101,26 @@ public class PuntosEncuentro extends AppCompatActivity implements hiloInterfaz {
                 return;
             }
             adapter =new ArrayAdapter<TipoPunto>(this,android.R.layout.simple_spinner_item,lista);
-            spinner.setAdapter(adapter);
+             tipoPunto.setAdapter(adapter);
+
+            if (json.getString("res").equalsIgnoreCase("EXITO")) {
+
+                String  msj = "Se ha registrado correctamente";
+                // limpiamos campos
+                descripcion.setText("");
+                latitud.setText("Latitud");
+                longitud.setText("Longitud");
+                capacidad.setText("");
+                capacidad.setText("");
+                 tipoPunto.setSelection(0);
+                Intent i = new Intent(this,MainActivity.class);
+                startActivity(i);
+
+                Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
+
+            } else{
+                Toast.makeText(this, json.getString("res"), Toast.LENGTH_SHORT).show();
+            }
 
         }catch (Exception e) {
             e.printStackTrace();
@@ -107,4 +131,63 @@ public class PuntosEncuentro extends AppCompatActivity implements hiloInterfaz {
     public void publicFinishListas(JSONArray jsonArray) {
 
     }
+
+    /**
+     * registramos a una persona y su usuario
+     * @param v
+     */
+    public void registrarPunto(View v) {
+
+        try {
+            String desc = descripcion.getText().toString();
+            String lat = latitud.getText().toString();
+            String lon = longitud.getText().toString();
+            int capac = Integer.parseInt(capacidad.getText().toString());
+            String tipoPun = tipoPunto.getSelectedItem().toString();
+            PuntoEncuentro pu = new PuntoEncuentro();
+            pu.setDescripcion(desc);
+           pu.setLatitud(lat);
+            pu.setLongitud(lon);
+            pu.setCapacidad(capac);
+            TipoPunto tipo= new TipoPunto();
+            tipo.setNombre(tipoPun);
+            pu.setTipoPunto(tipo);
+
+            Log.e("eeeh(((((((((((((((( ", "" + pu);
+            if (desc.equals(null) || lat.isEmpty() || lon.isEmpty() || capac ==0 || tipoPun.isEmpty()) {
+                Toast.makeText(this, "Por favor, ingrese los datos", Toast.LENGTH_SHORT).show();
+            } else {
+                /**
+                 * Llamamos el servicio de consignar
+                 */
+                servicio = new Servicio(pu, "gestionEncuentros.php", "crear", this, progreso);
+                /*Se inicia la petecion*/
+                servicio.delegate = this;
+                servicio.execute();
+//                String msj = servicio.getRta();
+//                if(msj.equals("EXITO")){
+//                    msj = "Se ha registrado correctamente";
+//                    // limpiamos campos
+//                    documento.setText("");
+//                    nombre.setText("");
+//                    apellido.setText("");
+//                    telefono.setText("");
+//                    familiar.setText("");
+//                    usuario.setText("");
+//                    password.setText("");
+//                    Intent i = new Intent(this,MainActivity.class);
+//                    startActivity(i);
+//                }
+//                Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
+//            }
+            }
+        }catch(NumberFormatException e){
+            Toast.makeText(this, "En la cedula solo campos numericos", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }catch (NullPointerException ex){
+            ex.printStackTrace();
+        }
+
+    }
+
 }

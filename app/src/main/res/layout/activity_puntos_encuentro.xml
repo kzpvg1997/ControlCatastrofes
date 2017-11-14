@@ -124,7 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="REGISTRAR"
-                android:onClick="crear"
+                android:onClick="registrarPunto"
                 android:id="@+id/btnRegistrarPunto"
                 style="@style/Botones.Azul"/>
 
