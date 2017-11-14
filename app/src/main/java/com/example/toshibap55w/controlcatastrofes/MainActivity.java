@@ -3,6 +3,7 @@ package com.example.toshibap55w.controlcatastrofes;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -83,12 +84,13 @@ public class MainActivity extends AppCompatActivity implements hiloInterfaz {
             u.setUsername(nick);
 
             if (!json.getString("res").equalsIgnoreCase("ERROR")) {
-                //Gson gson = new Gson();
-                //Persona p =gson.fromJson(json.getString("res"),Persona.class);
-                //MainActivity.setPersona(p);
-              //  Toast.makeText(this, "EL NOMBRESILLO "+MainActivity.getPersona().getNombre(), Toast.LENGTH_SHORT).show();
 
-                if (u.getUsername().equals("admin")) {
+                Persona p = new Persona();
+                p.setDocumento(Integer.parseInt(json.getString("res")));
+                Log.e(p.getDocumento()+"",">>>>>");
+                 MainActivity.setPersona(p);
+
+                if (u.getUsername().equalsIgnoreCase("admin")) {
                     Intent i = new Intent(this, MenuAdministrador.class);
                     startActivity(i);
                 }else {
