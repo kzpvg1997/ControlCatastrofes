@@ -5,24 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 
-import com.example.toshibap55w.controlcatastrofes.modelo.TipoCatastrofe;
-import com.example.toshibap55w.controlcatastrofes.modelo.TipoPunto;
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
-import com.google.android.gms.internal.se;
-import com.google.gson.Gson;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class AlertarCatastrofe extends AppCompatActivity implements HiloInterfaz{
+public class AlertarCatastrofe extends AppCompatActivity implements hiloInterfaz {
 
     EditText descripcionEmergencia,latitud,longitud;
     Spinner spinner;

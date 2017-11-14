@@ -5,12 +5,10 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.toshibap55w.controlcatastrofes.HiloInterfaz;
+import com.example.toshibap55w.controlcatastrofes.hiloInterfaz;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -40,7 +38,7 @@ public class Servicio extends AsyncTask<Void, String, Boolean> {
 
     public JSONObject rta;
 
-    public HiloInterfaz delegate=null;
+    public hiloInterfaz delegate=null;
 
     /**
      * Variable que almacena el resultado del servidor

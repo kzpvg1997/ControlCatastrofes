@@ -1,9 +1,11 @@
 package com.example.toshibap55w.controlcatastrofes.modelo;
 
+import java.io.Serializable;
+
 /**
  * Created by TOSHIBAP55W on 9/11/2017.
  */
-public class Noticia {
+public class Noticia implements Serializable{
 
     private int id;
     private String nombre;

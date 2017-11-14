@@ -3,25 +3,25 @@ package com.example.toshibap55w.controlcatastrofes;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.toshibap55w.controlcatastrofes.modelo.Persona;
 import com.example.toshibap55w.controlcatastrofes.modelo.Usuario;
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity implements HiloInterfaz{
+public class MainActivity extends AppCompatActivity implements hiloInterfaz {
 
     ProgressBar pbProgeso;
     Servicio servicio;
     EditText username,password;
+    public static Persona persona;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,12 @@ public class MainActivity extends AppCompatActivity implements HiloInterfaz{
             u.setPassword(pass);
             u.setUsername(nick);
 
-            if (json.getString("res").equalsIgnoreCase("EXITO")) {
+            if (!json.getString("res").equalsIgnoreCase("ERROR")) {
+                //Gson gson = new Gson();
+                //Persona p =gson.fromJson(json.getString("res"),Persona.class);
+                //MainActivity.setPersona(p);
+              //  Toast.makeText(this, "EL NOMBRESILLO "+MainActivity.getPersona().getNombre(), Toast.LENGTH_SHORT).show();
+
                 if (u.getUsername().equals("admin")) {
                     Intent i = new Intent(this, MenuAdministrador.class);
                     startActivity(i);
@@ -92,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements HiloInterfaz{
                 }
 
         }else{
-            Toast.makeText(this, json.getString("res"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Datos Incorrectos", Toast.LENGTH_SHORT).show();
         }
         }catch (Exception e){
             e.printStackTrace();
@@ -102,5 +107,13 @@ public class MainActivity extends AppCompatActivity implements HiloInterfaz{
     @Override
     public void publicFinishListas(JSONArray jsonArray) {
 
+    }
+
+    public static Persona getPersona() {
+        return persona;
+    }
+
+    public static void setPersona(Persona persona) {
+        MainActivity.persona = persona;
     }
 }

@@ -10,7 +10,6 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.toshibap55w.controlcatastrofes.modelo.Entidad;
 import com.example.toshibap55w.controlcatastrofes.modelo.Noticia;
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
 import com.google.gson.Gson;
@@ -19,31 +18,49 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeccionNoticias extends AppCompatActivity implements ListView.OnItemClickListener, HiloInterfaz{
+public class SeccionNoticias extends AppCompatActivity implements hiloInterfaz {
 
     private ProgressBar progreso;
 
     private Servicio servicio;
 
+    private Noticia noticia;
+
     ListView listView;
 
     private ArrayAdapter adapter;
+
+    List<Noticia> lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seccion_noticias);
         progreso = (ProgressBar) findViewById(R.id.progreso);
+        lista = new ArrayList<Noticia>();
         progreso.setVisibility(View.INVISIBLE);
         listView = (ListView) findViewById(R.id.listaNoticias);
         servicio = new Servicio(new Object(),"gestionNoticias.php","listar",this,progreso);
         servicio.delegate=this;
         servicio.execute();
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
+                // TODO Auto-generated method stub
+                noticia = lista.get(position);
+                Intent i = new Intent(getApplicationContext(), DetalleNoticia.class);
+                i.putExtra("noticia",noticia);
+                startActivity(i);
+
+            }
+
+        });
 
     }
 
@@ -51,12 +68,6 @@ public class SeccionNoticias extends AppCompatActivity implements ListView.OnIte
 
         Intent i = new Intent(this,DetalleNoticia.class);
         startActivity(i);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-
     }
 
     public List<Noticia> jsonToList(String json) throws JSONException {
@@ -74,7 +85,7 @@ public class SeccionNoticias extends AppCompatActivity implements ListView.OnIte
     public void publicFinish(JSONObject json) {
         try{
 
-            List<Noticia> lista=jsonToList(json.getString("res"));
+            lista=jsonToList(json.getString("res"));
             if(lista.size()<=0){
                 Toast.makeText(this,"Por favor ingrese datos",Toast.LENGTH_SHORT).show();
                 return;

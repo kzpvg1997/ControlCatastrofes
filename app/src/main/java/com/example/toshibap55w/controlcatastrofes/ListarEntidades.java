@@ -9,7 +9,6 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.toshibap55w.controlcatastrofes.modelo.Entidad;
-import com.example.toshibap55w.controlcatastrofes.modelo.Noticia;
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
 import com.google.gson.Gson;
 
@@ -20,7 +19,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListarEntidades extends AppCompatActivity implements HiloInterfaz{
+public class ListarEntidades extends AppCompatActivity implements hiloInterfaz {
 
     private ProgressBar progreso;
     private Servicio servicio;

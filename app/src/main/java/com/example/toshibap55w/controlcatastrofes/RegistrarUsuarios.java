@@ -16,7 +16,7 @@ import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class RegistrarUsuarios extends AppCompatActivity implements HiloInterfaz{
+public class RegistrarUsuarios extends AppCompatActivity implements hiloInterfaz {
 
     EditText documento,nombre,apellido,telefono,familiar,usuario,password;
     ProgressBar pbProgeso;
