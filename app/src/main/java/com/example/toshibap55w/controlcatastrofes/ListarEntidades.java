@@ -1,14 +1,17 @@
 package com.example.toshibap55w.controlcatastrofes;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.toshibap55w.controlcatastrofes.modelo.Entidad;
+import com.example.toshibap55w.controlcatastrofes.modelo.Noticia;
 import com.example.toshibap55w.controlcatastrofes.persistencia.Servicio;
 import com.google.gson.Gson;
 
@@ -24,6 +27,8 @@ public class ListarEntidades extends AppCompatActivity implements hiloInterfaz {
     private ProgressBar progreso;
     private Servicio servicio;
     ListView listaView;
+    List<Entidad> lista;
+    Entidad entidad;
 
     private ArrayAdapter adapter;
 
@@ -40,6 +45,18 @@ public class ListarEntidades extends AppCompatActivity implements hiloInterfaz {
         servicio = new Servicio(new Object(),"gestionEntidades.php","listar",this,progreso);
         servicio.delegate=this;
         servicio.execute();
+        listaView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
+                // TODO Auto-generated method stub
+                entidad = lista.get(position);
+                Intent i = new Intent(getApplicationContext(), VerEntidades.class);
+                i.putExtra("entidad",entidad);
+                startActivity(i);
+
+            }
+
+        });
 
     }
 
@@ -59,7 +76,7 @@ public class ListarEntidades extends AppCompatActivity implements hiloInterfaz {
 
         try{
 
-            List<Entidad> lista=jsonToList(json.getString("res"));
+            lista=jsonToList(json.getString("res"));
             if(lista.size()<=0){
                 Toast.makeText(this,"Por favor ingrese datos",Toast.LENGTH_SHORT).show();
                 return;

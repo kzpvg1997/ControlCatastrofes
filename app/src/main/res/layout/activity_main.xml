@@ -79,14 +79,30 @@
         style="@style/Botones.Azul"/>
 
 
-    <Button
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="110dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="REGISTRASE"
-        android:id="@+id/btnRegistrarse"
-        android:layout_gravity="center_horizontal"
-        android:onClick="abrirRegistro"
-        style="@style/Botones.Amarillo"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_marginLeft="110dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRASE"
+            android:id="@+id/btnRegistrarse"
+            android:layout_gravity="center_horizontal"
+            android:onClick="abrirRegistro"
+        style="@style/Botones.Amarillo"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LINTERNA"
+            android:id="@+id/button4"
+            android:onClick="flashesito"
+            android:layout_alignTop="@+id/btnRegistrarse"
+            android:layout_toStartOf="@+id/btnRegistrarse" />
+    </RelativeLayout>
+
 </LinearLayout>

@@ -6,13 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.toshibap55w.controlcatastrofes.modelo.Entidad;
+
 public class VerEntidades extends AppCompatActivity {
 
 
     private EditText tfNombre;
     private EditText tfDireccion;
     private EditText tfTelefono;
-
+private Entidad entidad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,21 +24,17 @@ public class VerEntidades extends AppCompatActivity {
         tfNombre = (EditText) findViewById(R.id.etNombreEntidad);
         tfDireccion = (EditText) findViewById(R.id.etDireccionEntidad);
         tfTelefono = (EditText) findViewById(R.id.etTelefonoEntidad);
+        entidad = (Entidad) getIntent().getExtras().getSerializable("entidad");
+mostrarEntidad();
     }
 
-    public void crear(View v){
+   public void mostrarEntidad(){
 
-    }
+       tfNombre.setText(entidad.getNOMBRE());
+       tfDireccion.setText(entidad.getDIRECCION());
+       tfTelefono.setText(entidad.getTELEFONO());
 
-
-
-    public void eliminar(View v){
-
-    }
-
-    public void listar(View v){
-
-    }
+   }
 
 
 }

@@ -47,4 +47,12 @@ public class MenuPrincipal extends AppCompatActivity {
         //  CustomerDTO global = (CustomerDTO) getApplication();
         //Toast.makeText(this, global.getName() + " APELLIDO ", Toast.LENGTH_LONG);
     }
+
+
+    public void abrirElementos(View v) {
+        Intent i = new Intent(this, ElementosActivity.class);
+        startActivity(i);
+        //  CustomerDTO global = (CustomerDTO) getApplication();
+        //Toast.makeText(this, global.getName() + " APELLIDO ", Toast.LENGTH_LONG);
+    }
 }

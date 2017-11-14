@@ -7,16 +7,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.toshibap55w.controlcatastrofes.VerEntidades"
     android:orientation="vertical"
     android:background="@drawable/fondo"
-    android:weightSum="1">
+    tools:context="com.example.toshibap55w.controlcatastrofes.VerElemento">
 
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gestion de entidades"
+        android:text="Datos de el elemento de supervivencia"
         android:textAlignment="center"
         android:id="@+id/textView2"
         style="@style/Titulos"/>
@@ -28,24 +27,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese el nombre"
-        android:id="@+id/etNombreEntidad"
+        android:id="@+id/etNombreElemento"
+        android:enabled="false"
         style="@style/cajasTextos"/>
 
     <EditText
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingrese la direccion"
-        android:id="@+id/etDireccionEntidad"
+        android:hint="Ingrese la descripcion"
+        android:id="@+id/etDescripcionElemento"
         style="@style/cajasTextos"
-        android:layout_weight="0.05" />
+        android:enabled="false"
+        android:layout_weight="0.00" />
 
-    <EditText
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingrese el telefono"
-        android:id="@+id/etTelefonoEntidad"
-        style="@style/cajasTextos"/>
 
 </LinearLayout>
