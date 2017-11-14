@@ -39,4 +39,14 @@
         android:id="@+id/btnGestionPuntos"
         style="@style/Botones.Azul"/>
 
+
+    <Button
+        android:layout_marginTop="160dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver Inicio"
+        android:onClick="volverInicio"
+        android:id="@+id/btnVolverAdmin"
+        style="@style/Botones.Rojo"/>
+
 </LinearLayout>

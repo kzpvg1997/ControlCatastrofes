@@ -26,4 +26,9 @@ public class MenuAdministrador extends AppCompatActivity {
         //  CustomerDTO global = (CustomerDTO) getApplication();
         //Toast.makeText(this, global.getName() + " APELLIDO ", Toast.LENGTH_LONG);
     }
+
+    public void volverInicio(View v) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
 }
